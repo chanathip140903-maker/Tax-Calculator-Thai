@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "hx4I8sd_xcAP8TsJOi4-U"
+uri = "file://thai-tax-calculator-src.zip"
+type = "unspecified"
+title = "thai-tax-calculator-src.zip"
