@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Thai Tax Calculator"
+version = "1.0.0"
+id = "artifacts/thai-tax-calculator"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19299
+
+[services.development]
+run = "pnpm --filter @workspace/thai-tax-calculator run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/thai-tax-calculator", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/thai-tax-calculator/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19299"
+BASE_PATH = "/"
