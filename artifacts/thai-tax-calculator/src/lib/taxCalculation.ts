@@ -1,3 +1,11 @@
+export const formatTHB = (value: number | undefined | null): string => {
+  if (value === undefined || value === null) return '0.00';
+  return new Intl.NumberFormat('th-TH', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(value);
+};
+
 export type Income = {
   type40_1: number; // เงินเดือน โบนัส
   type40_2: number; // รับจ้างทั่วไป ค่านายหน้า
